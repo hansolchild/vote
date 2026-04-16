@@ -784,9 +784,10 @@ function renderResult(){
   document.getElementById('r-bars').innerHTML=candDB.map((c,i)=>{
     const v=voteCount[c.id]||0;const pct=total?Math.round(v/total*100):0;
     return `<div class="rbar"><div class="rhead"><span>${c.name} <span style="color:#888780;font-weight:400">(${c.dept})</span></span><span>${v}표 · ${pct}%</span></div><div class="rbg"><div class="rfill" style="width:${pct}%;background:${CBAR_COLORS[i%CBAR_COLORS.length]}"></div></div></div>`;
-  }).join('');
-  }).join('');
-  const quorum=Math.floor(TOTAL/2)+1;const st=document.getElementById('r-status');
+  }).join(''); 
+  
+  const quorum=Math.floor(TOTAL/2)+1;
+  const st=document.getElementById('r-status');
   if(total>=quorum){st.style.borderLeftColor='#3B6D11';st.innerHTML=`투표율 과반수 충족 (${total}/${TOTAL}명). 투표가 유효하게 진행되고 있습니다.`;}
   else{st.style.borderLeftColor='#BA7517';st.innerHTML=`과반수 미달 — ${total}명 참여 / 유효 선거 기준: ${quorum}명 이상 필요`;}
 }
