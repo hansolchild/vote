@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>한솔어린이보육재단 노사협의회 근로자위원 선출</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f5f5f4;color:#1a1a18;min-height:100vh}
+.app{max-width:700px;margin:0 auto;padding:1.5rem 1rem}
+.screen{display:none}.screen.active{display:block}
+h1{font-size:20px;font-weight:600;color:#1a1a18;margin-bottom:4px}
+.sub{font-size:13px;color:#5f5e5a;margin-bottom:1.5rem;line-height:1.6}
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:#E6F1FB;color:#0C447C;margin-bottom:1rem}
+.card{background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+.clabel{font-size:11px;font-weight:600;color:#888780;letter-spacing:.06em;margin-bottom:14px;text-transform:uppercase}
+label{display:block;font-size:13px;color:#5f5e5a;margin-bottom:5px;margin-top:14px}
+label:first-of-type{margin-top:0}
+input[type=text],input[type=tel],input[type=datetime-local],input[type=number],select,textarea{width:100%;border:1px solid #d3d1c7;border-radius:8px;padding:9px 12px;font-size:14px;background:#fff;color:#1a1a18;font-family:inherit;appearance:none}
+textarea{resize:vertical;min-height:70px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#185FA5;box-shadow:0 0 0 3px rgba(24,95,165,.12)}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid #d3d1c7;background:#fff;color:#1a1a18;width:100%;margin-top:10px;transition:background .12s,border-color .12s}
+.btn:hover{background:#f1efe8;border-color:#b4b2a9}
+.btn.blue{background:#185FA5;color:#fff;border-color:#185FA5}.btn.blue:hover{background:#0C447C}
+.btn.green{background:#3B6D11;color:#fff;border-color:#3B6D11}.btn.green:hover{background:#27500A}
+.btn.red{background:#A32D2D;color:#fff;border-color:#A32D2D}.btn.red:hover{background:#791F1F}
+.btn.sm{padding:6px 14px;font-size:12px;width:auto;margin-top:0}
+.err{color:#791F1F;font-size:12px;margin-top:8px;padding:9px 12px;background:#FCEBEB;border-radius:8px;display:none;line-height:1.5;border:1px solid #F09595}
+.steps{display:flex;gap:6px;align-items:center;margin-bottom:1.5rem}
+.sdot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;border:1px solid #d3d1c7;background:#f1efe8;color:#888780;flex-shrink:0}
+.sdot.done{background:#3B6D11;border-color:#3B6D11;color:#fff}
+.sdot.active{background:#185FA5;border-color:#185FA5;color:#fff}
+.sline{flex:1;height:1px;background:#d3d1c7}.sline.done{background:#3B6D11}
+.info{background:#f1efe8;border-left:3px solid #185FA5;border-radius:0 6px 6px 0;padding:10px 14px;font-size:13px;color:#5f5e5a;margin-bottom:1rem;line-height:1.7}
+.warn{background:#FAEEDA;border-left:3px solid #BA7517;border-radius:0 6px 6px 0;padding:10px 14px;font-size:13px;color:#412402;margin-bottom:1rem;line-height:1.7}
+.ok-box{background:#EAF3DE;border-left:3px solid #3B6D11;border-radius:0 6px 6px 0;padding:10px 14px;font-size:13px;color:#173404;margin-bottom:1rem;line-height:1.7}
+.closed-box{background:#FCEBEB;border:1px solid #F09595;border-radius:12px;padding:2rem;text-align:center;margin-bottom:1rem}
+.closed-box h2{font-size:18px;font-weight:600;color:#791F1F;margin-bottom:8px}
+.closed-box p{font-size:13px;color:#A32D2D;line-height:1.7}
+.ccard{border:2px solid #e5e5e3;border-radius:12px;padding:1rem;margin-bottom:10px;cursor:pointer;transition:border-color .12s,background .12s;display:flex;gap:12px;align-items:flex-start;position:relative;background:#fff}
+.ccard:hover{border-color:#378ADD;background:#E6F1FB}
+.ccard.sel{border-color:#185FA5;background:#E6F1FB}
+.cnum{width:30px;height:30px;border-radius:50%;background:#f1efe8;border:1px solid #d3d1c7;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#888780;flex-shrink:0;margin-top:2px}
+.ccard.sel .cnum{background:#185FA5;border-color:#185FA5;color:#fff}
+.cbody{flex:1}
+.cname-v{font-size:15px;font-weight:600;color:#1a1a18}
+.cdept-v{font-size:12px;color:#5f5e5a;margin-top:2px}
+.cpledge-v{font-size:12px;color:#5f5e5a;margin-top:7px;line-height:1.6}
+.ctag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-right:4px;margin-top:5px;background:#E6F1FB;color:#0C447C;font-weight:600}
+.ctag2{background:#EAF3DE;color:#27500A}
+.chk{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:20px;color:#185FA5;font-weight:700;display:none}
+.ccard.sel .chk{display:block}
+.cfbox{background:#FAEEDA;border:1px solid #EF9F27;border-radius:8px;padding:14px 16px;margin-bottom:1rem}
+.cfrow{display:flex;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px solid rgba(186,117,23,.2)}
+.cfrow:last-child{border:none}
+.cflbl{color:#633806;min-width:90px;font-weight:600}
+.cfval{color:#412402}
+.sgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:1rem}
+.scard{background:#f1efe8;border-radius:8px;padding:14px;text-align:center}
+.sval{font-size:26px;font-weight:600;color:#1a1a18}
+.slbl{font-size:11px;color:#888780;margin-top:3px}
+.rbar{margin-bottom:14px}
+.rhead{font-size:13px;color:#1a1a18;display:flex;justify-content:space-between;margin-bottom:5px;font-weight:500}
+.rbg{background:#f1efe8;border-radius:20px;height:11px;overflow:hidden}
+.rfill{height:11px;border-radius:20px;transition:width 1.2s ease}
+.wtag{display:inline-flex;align-items:center;font-size:10px;background:#EAF3DE;color:#27500A;padding:2px 8px;border-radius:20px;margin-left:6px;font-weight:600}
+.vcenter{text-align:center;padding:2rem 0 1.5rem}
+.vicon{width:76px;height:76px;border-radius:50%;background:#EAF3DE;border:2.5px solid #3B6D11;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:34px;color:#3B6D11;font-weight:700}
+.anon{background:#EAF3DE;border:1px solid #97C459;border-radius:8px;padding:14px 16px;margin-bottom:1rem}
+.anon .atitle{font-size:13px;font-weight:600;color:#27500A;margin-bottom:6px}
+.anon p{font-size:12px;color:#173404;line-height:1.7}
+.tok{font-family:'Courier New',monospace;font-size:11px;background:#fff;border:1px solid #d3d1c7;border-radius:4px;padding:6px 10px;color:#888780;margin-top:8px;word-break:break-all}
+.atabs{display:flex;border:1px solid #d3d1c7;border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.atab{flex:1;padding:9px 4px;text-align:center;font-size:11px;font-weight:600;cursor:pointer;background:#f1efe8;color:#888780;border:none}
+.atab.on{background:#185FA5;color:#fff}
+.apanel{display:none}.apanel.on{display:block}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:9px 10px;color:#888780;font-weight:600;border-bottom:1px solid #e5e5e3;background:#f9f9f7}
+td{padding:9px 10px;border-bottom:1px solid #f1efe8;color:#1a1a18;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.pill{display:inline-block;font-size:10px;padding:3px 9px;border-radius:20px;font-weight:600}
+.pill.y{background:#EAF3DE;color:#27500A}
+.pill.n{background:#f1efe8;color:#888780}
+.row-btns{display:flex;gap:6px}
+.period-status{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f1efe8;border-radius:8px;margin-bottom:1rem;font-size:13px;color:#5f5e5a}
+.period-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.period-dot.open{background:#3B6D11}
+.period-dot.closed{background:#A32D2D}
+.period-dot.pending{background:#BA7517}
+.emp-form{background:#f9f9f7;border-radius:8px;padding:14px;margin-bottom:12px;border:1px solid #e5e5e3}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* 관리자 비밀번호 모달 — position:fixed 미사용 (iframe 호환) */
+.modal-screen{display:none}.modal-screen.active{display:block}
+.modal-wrap{background:rgba(0,0,0,0.35);border-radius:12px;padding:2rem 1rem;display:flex;align-items:center;justify-content:center;min-height:360px;margin-bottom:1rem}
+.modal-box{background:#fff;border-radius:16px;padding:1.75rem;width:100%;max-width:380px;border:1px solid #e5e5e3}
+.modal-box h2{font-size:17px;font-weight:600;color:#1a1a18;margin-bottom:6px;text-align:center}
+.modal-box .modal-sub{font-size:13px;color:#5f5e5a;margin-bottom:1.25rem;line-height:1.6;text-align:center}
+.lock-icon{width:52px;height:52px;border-radius:50%;background:#f1efe8;border:1.5px solid #d3d1c7;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:24px}
+.pw-input-wrap{position:relative}
+.pw-input-wrap input{padding-right:44px}
+.pw-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#888780;font-size:13px;padding:4px}
+.pw-attempts{font-size:12px;color:#888780;margin-top:6px;text-align:right}
+.pw-attempts.warn{color:#A32D2D}
+.modal-btns{display:flex;gap:8px;margin-top:14px}
+.modal-btns .btn{margin-top:0;flex:1}
+.session-bar{display:flex;align-items:center;justify-content:space-between;background:#EAF3DE;border:1px solid #97C459;border-radius:8px;padding:8px 14px;margin-bottom:1rem;font-size:12px;color:#27500A}
+.session-bar span{font-weight:600}
+.session-timer{font-family:monospace;font-weight:600;color:#3B6D11}
+/* 실시간 투표율 배너 */
+.rate-banner{background:#fff;border:1px solid #e5e5e3;border-radius:10px;padding:10px 14px;margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.rate-banner-left{flex:1;min-width:0}
+.rate-banner-title{font-size:11px;font-weight:600;color:#888780;letter-spacing:.04em;margin-bottom:5px}
+.rate-track{background:#f1efe8;border-radius:20px;height:8px;overflow:hidden}
+.rate-fill{height:8px;border-radius:20px;background:#185FA5;transition:width 1s ease}
+.rate-fill.quorum{background:#3B6D11}
+/* 붙여넣기 일괄등록 */
+.paste-area{width:100%;min-height:100px;border:1.5px dashed #d3d1c7;border-radius:8px;padding:10px 12px;font-size:13px;background:#f9f9f7;color:#1a1a18;font-family:'Apple SD Gothic Neo','Malgun Gothic',monospace;resize:vertical;line-height:1.7}
+.paste-area:focus{outline:none;border-color:#185FA5;background:#fff}
+.paste-preview{margin-top:10px}
+.paste-row{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;margin-bottom:4px;font-size:12px;background:#f9f9f7;border:1px solid #e5e5e3}
+.paste-row.ok{background:#EAF3DE;border-color:#97C459}
+.paste-row.err{background:#FCEBEB;border-color:#F09595}
+.paste-badge{font-size:10px;font-weight:600;padding:1px 7px;border-radius:10px;flex-shrink:0}
+.paste-badge.ok{background:#3B6D11;color:#fff}
+.paste-badge.err{background:#A32D2D;color:#fff}
+/* 인쇄 */
+@media print{
+  body{background:#fff}
+  .app > *:not(#print-area){display:none!important}
+  #print-area{display:block!important}
+  .no-print{display:none!important}
+}
+#print-area{display:none}
+.print-doc{max-width:680px;margin:0 auto;padding:2rem;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:#1a1a18}
+.print-header{text-align:center;border-bottom:2px solid #1a1a18;padding-bottom:1rem;margin-bottom:1.5rem}
+.print-header h2{font-size:20px;font-weight:700;margin-bottom:4px}
+.print-header p{font-size:13px;color:#5f5e5a}
+.print-body p{font-size:14px;line-height:2;margin-bottom:8px}
+.print-winner-box{border:2px solid #1a1a18;border-radius:4px;padding:1.5rem;text-align:center;margin:1.5rem 0}
+.print-winner-box .pw-name{font-size:28px;font-weight:700;margin-bottom:6px}
+.print-winner-box .pw-dept{font-size:15px;color:#5f5e5a}
+.print-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:13px}
+.print-table th{border:1px solid #888;padding:7px 10px;background:#f1efe8;font-weight:600;text-align:center}
+.print-table td{border:1px solid #888;padding:7px 10px;text-align:center}
+.print-footer{margin-top:2rem;text-align:right;font-size:13px;color:#5f5e5a;border-top:1px solid #d3d1c7;padding-top:1rem}
+.print-seal{display:inline-block;border:2px solid #A32D2D;border-radius:50%;width:60px;height:60px;line-height:56px;text-align:center;font-size:13px;font-weight:700;color:#A32D2D;margin-left:12px;vertical-align:middle}
+.rate-nums{display:flex;flex-shrink:0;gap:12px;text-align:center}
+.rate-num-block{display:flex;flex-direction:column;align-items:center}
+.rate-num-val{font-size:18px;font-weight:600;color:#1a1a18;line-height:1}
+.rate-num-lbl{font-size:10px;color:#888780;margin-top:3px}
+.rate-quorum-line{font-size:11px;color:#5f5e5a;margin-top:4px}
+.rate-quorum-line.met{color:#3B6D11;font-weight:600}
+.rate-quorum-line.unmet{color:#BA7517}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- ══ 관리자 비밀번호 화면 ══ -->
+
+<!-- ══ 관리자 비밀번호 화면 ══ -->
+<div id="s-pw" class="screen">
+  <div class="badge">관리자 전용</div>
+  <h1>관리자 인증</h1>
+  <p class="sub">관리자 화면에 접근하려면 비밀번호를 입력하세요.</p>
+  <div class="card" style="max-width:400px">
+    <div style="text-align:center;margin-bottom:1rem">
+      <div class="lock-icon">&#128274;</div>
+    </div>
+    <label>비밀번호</label>
+    <div class="pw-input-wrap">
+      <input type="password" id="pw-input" placeholder="비밀번호 입력" onkeydown="if(event.key==='Enter')doAdminLogin()" autocomplete="off" maxlength="20">
+      <button class="pw-toggle" onclick="togglePw()" id="pw-toggle-btn">&#128065;</button>
+    </div>
+    <div class="pw-attempts" id="pw-attempts"></div>
+    <div id="pw-err" class="err"></div>
+    <button class="btn blue" onclick="doAdminLogin()">확인</button>
+    <button class="btn" onclick="goScreen('s-login')" style="margin-top:6px">← 돌아가기</button>
+    <p style="font-size:11px;color:#b4b2a9;text-align:center;margin-top:14px">데모 비밀번호: <strong>admin1234</strong></p>
+  </div>
+</div>
+
+<!-- ══ 로그인 ══ -->
+<div id="s-login" class="screen active">
+  <div class="badge">근로자참여 및 협력증진에 관한 법률 제6조</div>
+  <h1 id="main-title">한솔어린이보육재단 노사협의회 근로자위원 선출</h1>
+  <p class="sub">사전 등록된 부서·이름·연락처가 모두 일치해야 로그인됩니다.</p>
+
+  <!-- 실시간 투표율 배너 -->
+  <div class="rate-banner" id="rate-banner">
+    <div class="rate-banner-left">
+      <div class="rate-banner-title">실시간 투표 현황</div>
+      <div class="rate-track"><div class="rate-fill" id="rate-fill" style="width:0%"></div></div>
+      <div class="rate-quorum-line" id="rate-quorum-line"></div>
+    </div>
+    <div class="rate-nums">
+      <div class="rate-num-block">
+        <div class="rate-num-val" id="b-voted">0</div>
+        <div class="rate-num-lbl">투표 완료</div>
+      </div>
+      <div style="width:1px;background:#e5e5e3;margin:2px 0"></div>
+      <div class="rate-num-block">
+        <div class="rate-num-val" id="b-total">0</div>
+        <div class="rate-num-lbl">전체 인원</div>
+      </div>
+      <div style="width:1px;background:#e5e5e3;margin:2px 0"></div>
+      <div class="rate-num-block">
+        <div class="rate-num-val" style="color:#185FA5" id="b-rate">0%</div>
+        <div class="rate-num-lbl">투표율</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="election-closed-box" class="closed-box" style="display:none">
+    <h2>투표 기간이 아닙니다</h2>
+    <p id="closed-msg"></p>
+  </div>
+
+  <div id="login-form-area">
+    <div class="card">
+      <div class="clabel">본인 정보 입력</div>
+      <label>부서</label>
+      <select id="l-dept">
+        <option value="">부서를 선택하세요</option>
+        <option>한솔영유아교육연구소</option><option>어린이집운영본부</option><option>경영지원실</option>
+      </select>
+      <label>이름</label>
+      <input type="text" id="l-name" placeholder="홍길동">
+      <label>연락처</label>
+      <input type="tel" id="l-phone" placeholder="010-0000-0000" oninput="fmtPhone(this)">
+      <div id="l-err" class="err"></div>
+      <div id="l-voted-err" class="err">이미 투표를 완료하셨습니다. 중복 투표는 허용되지 않습니다. (근로자참여법 제6조)</div>
+      <button class="btn blue" onclick="doLogin()">로그인</button>
+    </div>
+    <div class="info">법 제6조: 직접·비밀·무기명 투표 원칙. 개인 식별정보는 본인 확인 후 투표 내용과 분리 저장됩니다.</div>
+  </div>
+  <button class="btn" style="margin-top:0" onclick="openAdminModal()">관리자 화면 →</button>
+</div>
+
+<!-- ══ 투표 ══ -->
+<div id="s-vote" class="screen">
+  <div class="steps">
+    <div class="sdot done">✓</div><div class="sline done"></div>
+    <div class="sdot active">2</div><div class="sline"></div>
+    <div class="sdot">3</div>
+  </div>
+  <!-- 투표 화면 투표율 배너 -->
+  <div class="rate-banner" id="rate-banner-vote">
+    <div class="rate-banner-left">
+      <div class="rate-banner-title">현재 투표 현황</div>
+      <div class="rate-track"><div class="rate-fill" id="rate-fill-vote" style="width:0%"></div></div>
+      <div class="rate-quorum-line" id="rate-quorum-vote"></div>
+    </div>
+    <div class="rate-nums">
+      <div class="rate-num-block">
+        <div class="rate-num-val" id="bv-voted">0</div>
+        <div class="rate-num-lbl">투표 완료</div>
+      </div>
+      <div style="width:1px;background:#e5e5e3;margin:2px 0"></div>
+      <div class="rate-num-block">
+        <div class="rate-num-val" id="bv-total">0</div>
+        <div class="rate-num-lbl">전체 인원</div>
+      </div>
+      <div style="width:1px;background:#e5e5e3;margin:2px 0"></div>
+      <div class="rate-num-block">
+        <div class="rate-num-val" style="color:#185FA5" id="bv-rate">0%</div>
+        <div class="rate-num-lbl">투표율</div>
+      </div>
+    </div>
+  </div>
+  <h1>후보자 선택</h1>
+  <p class="sub">근로자위원 후보자 중 1명을 선택하세요 — 비밀·무기명 투표</p>
+  <div class="warn">제출 후에는 취소 또는 변경이 불가합니다. 신중하게 선택해주세요.</div>
+  <div id="c-list"></div>
+  <div id="vote-err" class="err">후보자를 선택해주세요.</div>
+  <button class="btn blue" style="margin-top:14px" onclick="doVoteConfirm()">선택 완료 →</button>
+</div>
+
+<!-- ══ 최종확인 ══ -->
+<div id="s-confirm" class="screen">
+  <div class="steps">
+    <div class="sdot done">✓</div><div class="sline done"></div>
+    <div class="sdot done">✓</div><div class="sline done"></div>
+    <div class="sdot active">3</div>
+  </div>
+  <h1>투표 최종 확인</h1>
+  <p class="sub">아래 내용을 확인한 후 투표를 완료하세요.</p>
+  <div class="cfbox">
+    <div class="cfrow"><span class="cflbl">선택 후보</span><span class="cfval" id="cf-name"></span></div>
+    <div class="cfrow"><span class="cflbl">소속·직종</span><span class="cfval" id="cf-dept"></span></div>
+    <div class="cfrow"><span class="cflbl">무기명 처리</span><span class="cfval">제출 즉시 개인정보 분리, 추적 불가</span></div>
+  </div>
+  <button class="btn green" onclick="doSubmit()">최종 투표 제출</button>
+  <button class="btn" onclick="goScreen('s-vote')">돌아가서 다시 선택</button>
+</div>
+
+<!-- ══ 완료 ══ -->
+<div id="s-done" class="screen">
+  <div class="vcenter">
+    <div class="vicon">✓</div>
+    <h1 style="margin-bottom:8px">투표가 완료되었습니다</h1>
+    <p style="font-size:14px;color:#5f5e5a">소중한 한 표를 행사해 주셨습니다</p>
+  </div>
+  <div class="anon">
+    <div class="atitle">무기명 처리 완료</div>
+    <p>귀하의 투표 내용은 개인식별정보와 완전히 분리되었습니다.<br>관리자를 포함한 누구도 귀하가 어떤 후보에게 투표했는지 확인할 수 없습니다.<br>이는 근로자참여법 제6조 무기명 투표 원칙에 따른 조치입니다.</p>
+    <div class="tok" id="receipt-tok"></div>
+  </div>
+  <button class="btn blue" onclick="goResult()">실시간 집계 현황 보기</button>
+</div>
+
+<!-- ══ 결과 ══ -->
+<div id="s-result" class="screen">
+  <h1>투표 현황</h1>
+  <p class="sub">득표 수치만 표시됩니다 — 투표자와 연결 불가</p>
+  <div class="sgrid">
+    <div class="scard"><div class="sval" id="r-total">0</div><div class="slbl">총 투표수</div></div>
+    <div class="scard"><div class="sval" id="r-rate">0%</div><div class="slbl">투표율</div></div>
+    <div class="scard"><div class="sval" id="r-left">0</div><div class="slbl">미투표</div></div>
+  </div>
+  <div class="card">
+    <div class="clabel">후보자별 득표 현황</div>
+    <div id="r-bars"></div>
+  </div>
+  <div id="r-status" class="info"></div>
+  <button class="btn" onclick="goScreen('s-done')">이전으로</button>
+</div>
+
+<!-- ══ 관리자 ══ -->
+<div id="s-admin" class="screen">
+  <div id="admin-session-bar" class="session-bar">
+    <span>관리자 세션 활성</span>
+    <span>자동 로그아웃: <span class="session-timer" id="session-timer">10:00</span></span>
+    <button class="btn sm red" style="padding:4px 12px;font-size:11px" onclick="logoutAdmin()">로그아웃</button>
+  </div>
+  <h1>관리자 화면</h1>
+  <p class="sub">선거 설정 · 직원 DB · 후보자 관리 · 투표 현황</p>
+  <div class="atabs">
+    <div class="atab on"  onclick="switchTab('t-period')">선거 기간</div>
+    <div class="atab"     onclick="switchTab('t-emp')">직원 DB</div>
+    <div class="atab"     onclick="switchTab('t-cand')">후보자</div>
+    <div class="atab"     onclick="switchTab('t-voters')">투표 현황</div>
+    <div class="atab"     onclick="switchTab('t-result')">득표 집계</div>
+    <div class="atab"     onclick="switchTab('t-log')">로그</div>
+    <div class="atab"     onclick="switchTab('t-pwchange')">비밀번호</div>
+  </div>
+
+  <!-- 선거 기간 설정 -->
+  <div id="t-period" class="apanel on">
+    <div class="ok-box">선거 기간 외에는 투표 화면이 자동으로 잠깁니다. 기간 변경은 즉시 반영됩니다.</div>
+    <div class="card">
+      <div class="clabel">선거 제목</div>
+      <input type="text" id="p-title" placeholder="예: 한솔어린이보육재단 노사협의회 근로자위원 선출">
+      <button class="btn blue sm" style="margin-top:10px;width:auto;padding:8px 20px" onclick="saveTitle()">제목 저장</button>
+    </div>
+    <div class="card">
+      <div class="clabel">선거 기간 설정</div>
+      <label>시작일시</label>
+      <input type="datetime-local" id="p-start">
+      <label>종료일시</label>
+      <input type="datetime-local" id="p-end">
+      <div id="p-err" class="err">종료일시는 시작일시보다 이후여야 합니다.</div>
+      <button class="btn blue" onclick="savePeriod()">기간 저장</button>
+    </div>
+    <div id="p-status" class="period-status">
+      <div class="period-dot" id="p-dot"></div>
+      <span id="p-status-text"></span>
+    </div>
+    <div class="card" style="border-color:#F09595">
+      <div class="clabel" style="color:#A32D2D">데이터 초기화</div>
+      <p style="font-size:13px;color:#5f5e5a;margin-bottom:12px;line-height:1.6">직원DB·후보자·투표 결과를 포함한 모든 데이터를 삭제합니다. 이 작업은 되돌릴 수 없습니다.</p>
+      <button class="btn red" onclick="resetAllData()" style="margin-top:0">전체 데이터 초기화</button>
+    </div>
+  </div>
+
+  <!-- 직원 DB -->
+  <div id="t-emp" class="apanel">
+    <div class="ok-box">직원 정보를 등록·수정·삭제합니다. 부서·이름·연락처 3가지가 모두 일치해야 투표 가능합니다.</div>
+
+    <!-- 붙여넣기 일괄 등록 -->
+    <div class="emp-form" style="border-color:#185FA5">
+      <div class="clabel" style="color:#185FA5">일괄 붙여넣기 등록</div>
+      <p style="font-size:12px;color:#5f5e5a;margin-bottom:8px;line-height:1.7">엑셀에서 <strong>부서 · 이름 · 연락처</strong> 3열을 복사해 아래에 붙여넣기 하세요.<br>탭(Tab) 또는 쉼표(,)로 구분된 형식을 자동 인식합니다.</p>
+      <textarea class="paste-area" id="paste-input" placeholder="예시 (엑셀에서 복사 후 붙여넣기):&#10;교사&#9;김민준&#9;010-1234-5678&#10;조리사&#9;이수연&#9;010-2345-6789&#10;사무직&#9;박정호&#9;010-3456-7890" oninput="parsePaste()"></textarea>
+      <div class="paste-preview" id="paste-preview"></div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn blue sm" style="flex:1;padding:10px" id="paste-save-btn" onclick="savePaste()" disabled>일괄 저장</button>
+        <button class="btn sm" style="flex:1;padding:10px" onclick="clearPaste()">초기화</button>
+      </div>
+    </div>
+
+    <!-- 개별 등록 -->
+    <div class="emp-form">
+      <div class="clabel" id="emp-form-label">개별 직원 추가</div>
+      <div class="grid2">
+        <div>
+          <label>부서</label>
+          <select id="e-dept">
+            <option value="">선택</option>
+            <option>한솔영유아교육연구소</option><option>어린이집운영본부</option><option>경영지원실</option>
+          </select>
+        </div>
+        <div>
+          <label>이름</label>
+          <input type="text" id="e-name" placeholder="홍길동">
+        </div>
+      </div>
+      <label>연락처</label>
+      <input type="tel" id="e-phone" placeholder="010-0000-0000" oninput="fmtPhone(this)">
+      <div id="e-err" class="err"></div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn blue sm" style="flex:1;padding:10px" onclick="saveEmp()">저장</button>
+        <button class="btn sm" style="flex:1;padding:10px" onclick="cancelEmpEdit()">취소</button>
+      </div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <table>
+        <thead><tr><th>부서</th><th>이름</th><th>연락처(마스킹)</th><th>투표</th><th>관리</th></tr></thead>
+        <tbody id="emp-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 후보자 -->
+  <div id="t-cand" class="apanel">
+    <div class="ok-box">후보자를 등록·수정·삭제합니다. 투표 화면에 즉시 반영됩니다.</div>
+    <div class="emp-form">
+      <div class="clabel" id="cand-form-label">새 후보자 추가</div>
+      <div class="grid2">
+        <div>
+          <label>이름</label>
+          <input type="text" id="cn-name" placeholder="홍길동">
+        </div>
+        <div>
+          <label>직종·경력 (예: 교사 5년)</label>
+          <input type="text" id="cn-dept" placeholder="교사 5년">
+        </div>
+      </div>
+      <label>공약</label>
+      <textarea id="cn-pledge" placeholder="공약을 입력하세요"></textarea>
+      <div id="cn-err" class="err"></div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn blue sm" style="flex:1;padding:10px" onclick="saveCand()">저장</button>
+        <button class="btn sm" style="flex:1;padding:10px" onclick="cancelCandEdit()">취소</button>
+      </div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <table>
+        <thead><tr><th>번호</th><th>이름</th><th>직종·경력</th><th>공약(요약)</th><th>관리</th></tr></thead>
+        <tbody id="cand-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 투표 현황 -->
+  <div id="t-voters" class="apanel">
+    <div class="ok-box">각 직원의 투표 참여 여부만 확인 가능합니다. 어떤 후보에게 투표했는지는 시스템 설계상 조회 불가합니다.</div>
+    <div class="sgrid" style="margin-bottom:1rem">
+      <div class="scard"><div class="sval" id="a-total">0</div><div class="slbl">총 투표수</div></div>
+      <div class="scard"><div class="sval" id="a-rate">0%</div><div class="slbl">투표율</div></div>
+      <div class="scard"><div class="sval" id="a-left">0</div><div class="slbl">미투표</div></div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <table>
+        <thead><tr><th>이름</th><th>부서</th><th>연락처</th><th>투표 여부</th><th>참여 시각</th></tr></thead>
+        <tbody id="voter-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 득표 집계 -->
+  <div id="t-result" class="apanel">
+    <div class="ok-box">득표 집계 수치만 표시됩니다. 투표자와 연결 불가합니다.</div>
+    <div id="admin-bars"></div>
+    <button class="btn blue" onclick="printAnnouncement()" style="margin-top:4px">당선자 안내문 인쇄</button>
+  </div>
+
+  <!-- 로그 -->
+  <div id="t-log" class="apanel">
+    <div class="ok-box">시스템 접근 로그입니다. 투표 내용은 기록되지 않으며 익명 토큰만 생성됩니다.</div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <table>
+        <thead><tr><th>시각</th><th>이벤트</th><th>익명 토큰</th></tr></thead>
+        <tbody id="log-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 비밀번호 변경 -->
+  <div id="t-pwchange" class="apanel">
+    <div class="warn">비밀번호 변경 후 현재 세션은 유지됩니다. 다음 로그인부터 새 비밀번호가 적용됩니다.</div>
+    <div class="card">
+      <div class="clabel">관리자 비밀번호 변경</div>
+      <label>현재 비밀번호</label>
+      <div class="pw-input-wrap">
+        <input type="password" id="pw-cur" placeholder="현재 비밀번호" autocomplete="off" maxlength="20">
+        <button class="pw-toggle" onclick="toggleField('pw-cur')" title="표시">&#128065;</button>
+      </div>
+      <label>새 비밀번호</label>
+      <div class="pw-input-wrap">
+        <input type="password" id="pw-new1" placeholder="새 비밀번호 (8자 이상)" autocomplete="off" maxlength="20" oninput="checkPwStrength()">
+        <button class="pw-toggle" onclick="toggleField('pw-new1')" title="표시">&#128065;</button>
+      </div>
+      <div id="pw-strength-bar" style="margin-top:6px;display:none">
+        <div style="height:5px;border-radius:4px;background:#e5e5e3;overflow:hidden">
+          <div id="pw-strength-fill" style="height:5px;border-radius:4px;transition:width .3s,background .3s;width:0%"></div>
+        </div>
+        <div id="pw-strength-text" style="font-size:11px;margin-top:4px;color:#888780"></div>
+      </div>
+      <label>새 비밀번호 확인</label>
+      <div class="pw-input-wrap">
+        <input type="password" id="pw-new2" placeholder="새 비밀번호 재입력" autocomplete="off" maxlength="20">
+        <button class="pw-toggle" onclick="toggleField('pw-new2')" title="표시">&#128065;</button>
+      </div>
+      <div id="pw-change-err" class="err"></div>
+      <div id="pw-change-ok" style="display:none;font-size:13px;color:#27500A;background:#EAF3DE;border:1px solid #97C459;border-radius:8px;padding:10px 12px;margin-top:8px">비밀번호가 성공적으로 변경되었습니다.</div>
+      <button class="btn blue" onclick="doChangePw()">비밀번호 변경</button>
+    </div>
+    <div class="info" style="margin-top:0">
+      권장 비밀번호: 영문+숫자+특수문자 조합 8자 이상. GAS 실배포 시에는 Script Properties에 저장하여 소스코드에 노출되지 않도록 관리하세요.
+    </div>
+  </div>
+
+  <button class="btn" onclick="goScreen('s-login')" style="margin-top:8px">← 투표 화면으로</button>
+</div>
+
+<!-- 인쇄 전용 영역 -->
+<div id="print-area"></div>
+
+</div>
+<script>
+const CBAR_COLORS=['#185FA5','#3B6D11','#BA7517','#A32D2D','#993556','#0F6E56'];
+
+/* ── localStorage 영구 저장 ── */
+function saveDB(){
+  localStorage.setItem('election_empDB',   JSON.stringify(empDB));
+  localStorage.setItem('election_candDB',  JSON.stringify(candDB));
+  localStorage.setItem('election_voteCount',JSON.stringify(voteCount));
+  localStorage.setItem('election_votedSet', JSON.stringify([...votedSet]));
+  localStorage.setItem('election_voteTs',  JSON.stringify(voteTimestamps));
+  localStorage.setItem('election_period',  JSON.stringify(electionPeriod));
+  localStorage.setItem('election_title',   electionTitle);
+  localStorage.setItem('election_empSeq',  String(empIdSeq));
+  localStorage.setItem('election_candSeq', String(candIdSeq));
+}
+function loadDB(){
+  try {
+    const e=localStorage.getItem('election_empDB');   if(e) empDB=JSON.parse(e);
+    const c=localStorage.getItem('election_candDB');  if(c) candDB=JSON.parse(c);
+    const v=localStorage.getItem('election_voteCount');if(v){ const vc=JSON.parse(v); Object.keys(vc).forEach(k=>voteCount[k]=vc[k]); }
+    const vs=localStorage.getItem('election_votedSet');if(vs) JSON.parse(vs).forEach(id=>votedSet.add(id));
+    const vt=localStorage.getItem('election_voteTs'); if(vt) Object.assign(voteTimestamps,JSON.parse(vt));
+    const p=localStorage.getItem('election_period');  if(p) electionPeriod=JSON.parse(p);
+    const t=localStorage.getItem('election_title');   if(t) electionTitle=t;
+    const es=localStorage.getItem('election_empSeq'); if(es) empIdSeq=parseInt(es)||1;
+    const cs=localStorage.getItem('election_candSeq');if(cs) candIdSeq=parseInt(cs)||1;
+  } catch(err){ console.error('DB 로드 오류',err); }
+}
+
+/* ── 초기 데이터 (빈 상태로 시작 — 관리자가 직접 입력) ── */
+let empDB=[];
+let candDB=[];
+let voteCount={};
+const votedSet=new Set();
+const voteTimestamps={};
+const sysLog=[];
+let electionPeriod={
+  start:new Date(Date.now()).toISOString().slice(0,16),
+  end:new Date(Date.now()+1000*60*60*24).toISOString().slice(0,16)
+};
+let electionTitle='노사협의회 근로자위원 선출';
+let curEmpId=null,selCandId=null,editEmpId=null,editCandId=null,empIdSeq=1,candIdSeq=1;
+
+loadDB(); // localStorage에서 데이터 복원
+
+function normalizePhone(p){return p.replace(/\D/g,'');}
+function maskPhone(p){const d=normalizePhone(p);if(d.length<8)return '***-****-****';return d.slice(0,3)+'-****-'+d.slice(7);}
+function genToken(){return 'VT-'+Math.random().toString(36).slice(2,8).toUpperCase()+'-'+Date.now().toString(36).toUpperCase();}
+function genId(prefix,seq){return prefix+String(seq).padStart(3,'0');}
+function fmtPhone(el){let v=el.value.replace(/\D/g,'');if(v.length<=3)el.value=v;else if(v.length<=7)el.value=v.slice(0,3)+'-'+v.slice(3);else el.value=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7,11);}
+function addLog(ev,tok){sysLog.push({time:new Date().toLocaleTimeString('ko-KR'),event:ev,token:tok});}
+function goScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  updateBanners();
+}
+function isElectionOpen(){const now=new Date();return now>=new Date(electionPeriod.start)&&now<=new Date(electionPeriod.end);}
+function fmtDt(iso){if(!iso)return '-';const d=new Date(iso);return d.toLocaleDateString('ko-KR')+' '+d.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});}
+
+/* ── 실시간 투표율 배너 ── */
+function calcBannerData(){
+  const total=empDB.length;
+  const voted=votedSet.size;
+  const pct=total>0?Math.round(voted/total*100):0;
+  const quorum=Math.floor(total/2)+1;
+  const metQuorum=voted>=quorum;
+  return {total,voted,pct,quorum,metQuorum};
+}
+
+function updateBanners(){
+  const {total,voted,pct,quorum,metQuorum}=calcBannerData();
+  const fillColor=metQuorum?'#3B6D11':'#185FA5';
+  const quorumText=metQuorum
+    ?`과반수 충족 (${quorum}명 기준)`
+    :`과반수까지 ${quorum-voted}명 남음 (기준: ${quorum}명)`;
+  const quorumClass='rate-quorum-line '+(metQuorum?'met':'unmet');
+
+  // 로그인 화면 배너
+  ['','vote'].forEach(suffix=>{
+    const sep=suffix?'-':'';
+    const fillEl=document.getElementById('rate-fill'+(suffix?'-'+suffix:''));
+    const quorumEl=document.getElementById('rate-quorum'+(suffix?'-'+suffix:''));
+    const votedEl=document.getElementById((suffix?'bv':'b')+'-voted');
+    const totalEl=document.getElementById((suffix?'bv':'b')+'-total');
+    const rateEl =document.getElementById((suffix?'bv':'b')+'-rate');
+    if(fillEl){ fillEl.style.width=pct+'%'; fillEl.style.background=fillColor; fillEl.className='rate-fill'+(metQuorum?' quorum':''); }
+    if(quorumEl){ quorumEl.textContent=quorumText; quorumEl.className=quorumClass; }
+    if(votedEl) votedEl.textContent=voted;
+    if(totalEl) totalEl.textContent=total;
+    if(rateEl)  rateEl.textContent=pct+'%';
+  });
+}
+
+// 30초마다 자동 갱신
+setInterval(updateBanners, 30000);
+
+function checkLoginScreen(){
+  const open=isElectionOpen();
+  document.getElementById('election-closed-box').style.display=open?'none':'block';
+  document.getElementById('login-form-area').style.display=open?'block':'none';
+  document.getElementById('main-title').textContent=electionTitle;
+  if(!open){
+    const now=new Date(),start=new Date(electionPeriod.start);
+    let msg=now<start?`투표 시작: ${fmtDt(electionPeriod.start)}<br>종료: ${fmtDt(electionPeriod.end)}`:`투표가 종료되었습니다.<br>기간: ${fmtDt(electionPeriod.start)} ~ ${fmtDt(electionPeriod.end)}`;
+    document.getElementById('closed-msg').innerHTML=msg;
+  }
+}
+
+function doLogin(){
+  const dept=document.getElementById('l-dept').value.trim();
+  const name=document.getElementById('l-name').value.trim();
+  const phone=document.getElementById('l-phone').value.trim();
+  const errEl=document.getElementById('l-err');
+  const votedEl=document.getElementById('l-voted-err');
+  errEl.style.display='none';votedEl.style.display='none';
+  if(!dept||!name||!phone){errEl.textContent='부서, 이름, 연락처를 모두 입력해주세요.';errEl.style.display='block';return;}
+  const emp=empDB.find(e=>e.dept===dept&&e.name===name&&normalizePhone(e.phone)===normalizePhone(phone));
+  if(!emp){errEl.textContent='등록된 직원 정보와 일치하지 않습니다. 부서·이름·연락처를 다시 확인해주세요.';errEl.style.display='block';addLog('로그인 실패',null);return;}
+  if(votedSet.has(emp.id)){votedEl.style.display='block';addLog('중복 투표 시도 차단',null);return;}
+  curEmpId=emp.id;addLog('로그인 성공',null);renderCandidates();goScreen('s-vote');
+}
+
+function renderCandidates(){
+  document.getElementById('c-list').innerHTML=candDB.map((c,i)=>`
+    <div class="ccard" id="cc-${c.id}" onclick="selCand(${c.id})">
+      <div class="cnum">${i+1}</div>
+      <div class="cbody">
+        <div class="cname-v">${c.name}</div>
+        <div class="cdept-v">${c.dept}</div>
+        <span class="ctag">${c.dept.split(' ')[0]}</span>
+        <span class="ctag ctag2">${(c.dept.match(/\(([^)]+)\)/)||['',''])[1]}</span>
+        <div class="cpledge-v">${c.pledge}</div>
+      </div>
+      <div class="chk">✓</div>
+    </div>`).join('');
+}
+function selCand(id){selCandId=id;document.querySelectorAll('.ccard').forEach(c=>c.classList.remove('sel'));document.getElementById('cc-'+id).classList.add('sel');document.getElementById('vote-err').style.display='none';}
+function doVoteConfirm(){if(!selCandId){document.getElementById('vote-err').style.display='block';return;}const c=candDB.find(x=>x.id===selCandId);document.getElementById('cf-name').textContent=c.name;document.getElementById('cf-dept').textContent=c.dept;goScreen('s-confirm');}
+function doSubmit(){
+  if(!voteCount[selCandId])voteCount[selCandId]=0;
+  voteCount[selCandId]++;
+  votedSet.add(curEmpId);
+  voteTimestamps[curEmpId]=new Date().toLocaleTimeString('ko-KR');
+  const tok=genToken();
+  document.getElementById('receipt-tok').textContent='투표 영수증 토큰: '+tok+' (내용 미포함)';
+  addLog('투표 완료 — 내용 미기록, 개인정보 분리',tok);
+  curEmpId=null;selCandId=null;
+  saveDB();renderResult();renderAdminData();updateBanners();goScreen('s-done');
+}
+
+function goResult(){renderResult();goScreen('s-result');}
+function renderResult(){
+  const total=Object.values(voteCount).reduce((a,b)=>a+b,0);
+  const maxV=total>0?Math.max(...Object.values(voteCount)):0;
+  const TOTAL=empDB.length;
+  document.getElementById('r-total').textContent=total;
+  document.getElementById('r-rate').textContent=Math.round(total/TOTAL*100)+'%';
+  document.getElementById('r-left').textContent=TOTAL-total;
+  document.getElementById('r-bars').innerHTML=candDB.map((c,i)=>{
+    const v=voteCount[c.id]||0;const pct=total?Math.round(v/total*100):0;const isW=v===maxV&&total>0;
+    return `<div class="rbar"><div class="rhead"><span>${c.name} <span style="color:#888780;font-weight:400">(${c.dept})</span>${isW?'<span class="wtag">선두</span>':''}</span><span>${v}표 · ${pct}%</span></div><div class="rbg"><div class="rfill" style="width:${pct}%;background:${CBAR_COLORS[i%CBAR_COLORS.length]}"></div></div></div>`;
+  }).join('');
+  const quorum=Math.floor(TOTAL/2)+1;const st=document.getElementById('r-status');
+  if(total>=quorum){const w=candDB.find(c=>(voteCount[c.id]||0)===maxV);st.style.borderLeftColor='#3B6D11';st.innerHTML=`투표율 과반수 충족 (${total}/${TOTAL}명). 현재 선두: <strong>${w?w.name:'-'}</strong> (${maxV}표)`;}
+  else{st.style.borderLeftColor='#BA7517';st.innerHTML=`과반수 미달 — ${total}명 참여 / 유효 선거 기준: ${quorum}명 이상 필요`;}
+}
+
+function goAdmin(){renderAdminData();updatePeriodUI();goScreen('s-admin');}
+function switchTab(id){
+  document.querySelectorAll('.apanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  const order=['t-period','t-emp','t-cand','t-voters','t-result','t-log','t-pwchange'];
+  document.querySelectorAll('.atab')[order.indexOf(id)].classList.add('on');
+  renderAdminData();updatePeriodUI();
+}
+
+function renderAdminData(){
+  const TOTAL=empDB.length,voted=votedSet.size;
+  document.getElementById('a-total').textContent=voted;
+  document.getElementById('a-rate').textContent=Math.round(voted/TOTAL*100)+'%';
+  document.getElementById('a-left').textContent=TOTAL-voted;
+  document.getElementById('emp-tbody').innerHTML=empDB.length===0
+    ? `<tr><td colspan="5" style="text-align:center;color:#888780;padding:1.5rem">등록된 직원이 없습니다. 위 폼에서 추가하세요.</td></tr>`
+    : empDB.map(e=>{
+        const did=votedSet.has(e.id);
+        return `<tr><td>${e.dept}</td><td>${e.name}</td><td style="font-family:monospace">${maskPhone(e.phone)}</td><td><span class="pill ${did?'y':'n'}">${did?'완료':'미완료'}</span></td><td><div class="row-btns">${did?'<span style="font-size:11px;color:#888780">투표완료·잠금</span>':`<button class="btn sm" onclick="editEmp('${e.id}')">수정</button><button class="btn red sm" onclick="delEmp('${e.id}')">삭제</button>`}</div></td></tr>`;
+      }).join('');
+  document.getElementById('cand-tbody').innerHTML=candDB.length===0
+    ? `<tr><td colspan="5" style="text-align:center;color:#888780;padding:1.5rem">등록된 후보자가 없습니다. 위 폼에서 추가하세요.</td></tr>`
+    : candDB.map((c,i)=>`<tr><td>${i+1}</td><td>${c.name}</td><td>${c.dept}</td><td style="max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.pledge}</td><td><div class="row-btns"><button class="btn sm" onclick="editCand(${c.id})">수정</button><button class="btn red sm" onclick="delCand(${c.id})">삭제</button></div></td></tr>`).join('');
+  document.getElementById('voter-tbody').innerHTML=empDB.map(e=>{const did=votedSet.has(e.id);return `<tr><td>${e.name}</td><td>${e.dept}</td><td style="font-family:monospace">${maskPhone(e.phone)}</td><td><span class="pill ${did?'y':'n'}">${did?'참여 완료':'미참여'}</span></td><td style="color:#888780">${did?(voteTimestamps[e.id]||'-'):'-'}</td></tr>`;}).join('');
+  const total=Object.values(voteCount).reduce((a,b)=>a+b,0);const maxV=total>0?Math.max(...Object.values(voteCount)):0;
+  document.getElementById('admin-bars').innerHTML='<div class="card"><div class="clabel">후보자별 득표 (투표자 연결 불가)</div>'+candDB.map((c,i)=>{const v=voteCount[c.id]||0;const pct=total?Math.round(v/total*100):0;const isW=v===maxV&&total>0;return `<div class="rbar"><div class="rhead"><span>${c.name}${isW&&total>0?'<span class="wtag">선두</span>':''}</span><span>${v}표 (${pct}%)</span></div><div class="rbg"><div class="rfill" style="width:${pct}%;background:${CBAR_COLORS[i%CBAR_COLORS.length]}"></div></div></div>`;}).join('')+'</div>';
+  document.getElementById('log-tbody').innerHTML=sysLog.slice().reverse().map(l=>`<tr><td style="color:#888780">${l.time}</td><td>${l.event}</td><td style="font-family:monospace;font-size:11px;color:#888780">${l.token||'—'}</td></tr>`).join('');
+}
+
+function updatePeriodUI(){
+  document.getElementById('p-start').value=electionPeriod.start;
+  document.getElementById('p-end').value=electionPeriod.end;
+  document.getElementById('p-title').value=electionTitle;
+  const open=isElectionOpen();const now=new Date();const start=new Date(electionPeriod.start);
+  const dot=document.getElementById('p-dot');const txt=document.getElementById('p-status-text');
+  if(open){dot.className='period-dot open';txt.textContent=`투표 진행 중 — ${fmtDt(electionPeriod.start)} ~ ${fmtDt(electionPeriod.end)}`;}
+  else if(now<start){dot.className='period-dot pending';txt.textContent=`투표 예정 — ${fmtDt(electionPeriod.start)} 시작`;}
+  else{dot.className='period-dot closed';txt.textContent=`투표 종료 — ${fmtDt(electionPeriod.end)} 마감`;}
+}
+function savePeriod(){
+  const s=document.getElementById('p-start').value;const e=document.getElementById('p-end').value;
+  const err=document.getElementById('p-err');
+  if(!s||!e||new Date(s)>=new Date(e)){err.style.display='block';return;}
+  err.style.display='none';electionPeriod={start:s,end:e};
+  saveDB();updatePeriodUI();checkLoginScreen();addLog('선거 기간 변경',null);
+  alert('선거 기간이 저장되었습니다.');
+}
+function saveTitle(){
+  const t=document.getElementById('p-title').value.trim();
+  if(!t)return;
+  electionTitle=t;
+  saveDB();checkLoginScreen();addLog('선거 제목 변경',null);
+  alert('선거 제목이 저장되었습니다.');
+}
+
+function saveEmp(){
+  const dept=document.getElementById('e-dept').value;const name=document.getElementById('e-name').value.trim();const phone=document.getElementById('e-phone').value.trim();
+  const err=document.getElementById('e-err');
+  if(!dept||!name||!phone){err.textContent='모든 항목을 입력해주세요.';err.style.display='block';return;}
+  if(editEmpId){
+    const i=empDB.findIndex(e=>e.id===editEmpId);
+    if(i>-1){empDB[i]={...empDB[i],dept,name,phone};addLog('직원 수정',null);}
+    editEmpId=null;document.getElementById('emp-form-label').textContent='새 직원 추가';
+  }else{
+    const dup=empDB.find(e=>e.dept===dept&&e.name===name&&normalizePhone(e.phone)===normalizePhone(phone));
+    if(dup){err.textContent='동일한 직원이 이미 등록되어 있습니다.';err.style.display='block';return;}
+    empDB.push({id:genId('E',empIdSeq++),dept,name,phone});addLog('직원 등록',null);
+  }
+  err.style.display='none';saveDB();resetEmpForm();renderAdminData();updateBanners();
+}
+function editEmp(id){const e=empDB.find(x=>x.id===id);if(!e)return;editEmpId=id;document.getElementById('e-dept').value=e.dept;document.getElementById('e-name').value=e.name;document.getElementById('e-phone').value=e.phone;document.getElementById('emp-form-label').textContent='직원 정보 수정';document.getElementById('e-err').style.display='none';}
+function delEmp(id){if(votedSet.has(id)){alert('이미 투표한 직원은 삭제할 수 없습니다.');return;}if(!confirm('삭제하시겠습니까?'))return;empDB=empDB.filter(e=>e.id!==id);addLog('직원 삭제',null);saveDB();renderAdminData();updateBanners();}
+function cancelEmpEdit(){editEmpId=null;resetEmpForm();}
+function resetEmpForm(){document.getElementById('e-dept').value='';document.getElementById('e-name').value='';document.getElementById('e-phone').value='';document.getElementById('e-err').style.display='none';document.getElementById('emp-form-label').textContent='새 직원 추가';}
+
+function saveCand(){
+  const name=document.getElementById('cn-name').value.trim();const dept=document.getElementById('cn-dept').value.trim();const pledge=document.getElementById('cn-pledge').value.trim();
+  const err=document.getElementById('cn-err');
+  if(!name||!dept||!pledge){err.textContent='모든 항목을 입력해주세요.';err.style.display='block';return;}
+  if(editCandId){
+    const i=candDB.findIndex(c=>c.id===editCandId);
+    if(i>-1){candDB[i]={...candDB[i],name,dept,pledge};addLog('후보자 수정',null);}
+    editCandId=null;document.getElementById('cand-form-label').textContent='새 후보자 추가';
+  }else{
+    const newId=candIdSeq++;candDB.push({id:newId,name,dept,pledge});voteCount[newId]=0;addLog('후보자 등록',null);
+  }
+  err.style.display='none';saveDB();resetCandForm();renderAdminData();
+}
+function editCand(id){const c=candDB.find(x=>x.id===id);if(!c)return;editCandId=id;document.getElementById('cn-name').value=c.name;document.getElementById('cn-dept').value=c.dept;document.getElementById('cn-pledge').value=c.pledge;document.getElementById('cand-form-label').textContent='후보자 정보 수정';document.getElementById('cn-err').style.display='none';}
+function delCand(id){if((voteCount[id]||0)>0){alert('이미 득표가 있는 후보자는 삭제할 수 없습니다.');return;}if(!confirm('삭제하시겠습니까?'))return;candDB=candDB.filter(c=>c.id!==id);delete voteCount[id];addLog('후보자 삭제',null);saveDB();renderAdminData();}
+function cancelCandEdit(){editCandId=null;resetCandForm();}
+function resetCandForm(){document.getElementById('cn-name').value='';document.getElementById('cn-dept').value='';document.getElementById('cn-pledge').value='';document.getElementById('cn-err').style.display='none';document.getElementById('cand-form-label').textContent='새 후보자 추가';}
+
+addLog('시스템 시작',null);
+checkLoginScreen();
+updateBanners();
+
+function resetAllData(){
+  if(!confirm('모든 데이터(직원·후보자·투표결과)를 초기화하시겠습니까?\n이 작업은 되돌릴 수 없습니다.'))return;
+  if(!confirm('정말로 삭제합니다. 계속하시겠습니까?'))return;
+  const keys=['election_empDB','election_candDB','election_voteCount','election_votedSet',
+              'election_voteTs','election_empSeq','election_candSeq'];
+  keys.forEach(k=>localStorage.removeItem(k));
+  empDB=[]; candDB=[]; Object.keys(voteCount).forEach(k=>delete voteCount[k]);
+  votedSet.clear(); Object.keys(voteTimestamps).forEach(k=>delete voteTimestamps[k]);
+  empIdSeq=1; candIdSeq=1;
+  addLog('전체 데이터 초기화',null);
+  renderAdminData(); updateBanners();
+  alert('초기화 완료. 직원 및 후보자를 새로 등록해주세요.');
+}
+
+/* ── 붙여넣기 일괄 등록 ── */
+let pasteRows = [];
+const VALID_DEPTS = ['원장','교사','조리사','영양사','간호사','사무직','기타'];
+
+function parsePaste(){
+  const raw = document.getElementById('paste-input').value;
+  const lines = raw.split('\n').map(l=>l.trim()).filter(l=>l);
+  pasteRows = [];
+  const preview = document.getElementById('paste-preview');
+
+  if(!lines.length){ preview.innerHTML=''; document.getElementById('paste-save-btn').disabled=true; return; }
+
+  let html = '';
+  lines.forEach((line,i)=>{
+    const cols = line.includes('\t') ? line.split('\t') : line.split(',');
+    const parts = cols.map(c=>c.trim());
+    if(parts.length < 3){ pasteRows.push({ok:false,reason:'열이 3개 미만'}); html+=rowHtml(false,line,'열 수 부족 (부서·이름·연락처 필요)'); return; }
+    const [dept,name,phone,...rest] = parts;
+    const normPhone = phone.replace(/\D/g,'');
+    let reason = '';
+    if(!dept) reason='부서 없음';
+    else if(!name) reason='이름 없음';
+    else if(normPhone.length < 9) reason='연락처 형식 오류';
+    else if(empDB.find(e=>e.dept===dept&&e.name===name&&normalizePhone(e.phone)===normPhone)) reason='이미 등록된 직원';
+    if(reason){ pasteRows.push({ok:false,reason}); html+=rowHtml(false,`${dept} / ${name} / ${phone}`,reason); }
+    else { pasteRows.push({ok:true,dept,name,phone}); html+=rowHtml(true,`${dept} / ${name} / ${phone}`,'등록 가능'); }
+  });
+
+  const okCount = pasteRows.filter(r=>r.ok).length;
+  preview.innerHTML = `<div style="font-size:12px;color:#5f5e5a;margin-bottom:6px">${lines.length}행 분석 — <span style="color:#3B6D11;font-weight:600">${okCount}명 등록 가능</span>${okCount<lines.length?` / <span style="color:#A32D2D">${lines.length-okCount}명 오류</span>`:''}</div>${html}`;
+  document.getElementById('paste-save-btn').disabled = okCount === 0;
+}
+
+function rowHtml(ok, text, note){
+  return `<div class="paste-row ${ok?'ok':'err'}">
+    <span class="paste-badge ${ok?'ok':'err'}">${ok?'OK':'오류'}</span>
+    <span style="flex:1">${text}</span>
+    <span style="font-size:11px;color:${ok?'#3B6D11':'#A32D2D'}">${note}</span>
+  </div>`;
+}
+
+function savePaste(){
+  const toAdd = pasteRows.filter(r=>r.ok);
+  if(!toAdd.length) return;
+  toAdd.forEach(r=>{ empDB.push({id:genId('E',empIdSeq++),dept:r.dept,name:r.name,phone:r.phone}); });
+  addLog(`직원 일괄 등록 ${toAdd.length}명`,null);
+  saveDB(); clearPaste(); renderAdminData(); updateBanners();
+  alert(`${toAdd.length}명이 등록되었습니다.`);
+}
+
+function clearPaste(){
+  document.getElementById('paste-input').value='';
+  document.getElementById('paste-preview').innerHTML='';
+  document.getElementById('paste-save-btn').disabled=true;
+  pasteRows=[];
+}
+
+/* ── 당선자 안내문 인쇄 ── */
+function printAnnouncement(){
+  const total = empDB.length;
+  const voted = votedSet.size;
+  const quorum = Math.floor(total/2)+1;
+  if(voted < quorum){
+    if(!confirm(`현재 투표율이 과반수 기준(${quorum}명)에 미달합니다.\n그래도 인쇄하시겠습니까?`)) return;
+  }
+  if(!candDB.length){ alert('등록된 후보자가 없습니다.'); return; }
+
+  const totalVotes = Object.values(voteCount).reduce((a,b)=>a+b,0);
+  const maxV = totalVotes > 0 ? Math.max(...candDB.map(c=>voteCount[c.id]||0)) : 0;
+  const winners = candDB.filter(c=>(voteCount[c.id]||0)===maxV && maxV > 0);
+  const winner = winners[0];
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric'});
+
+  const resultRows = candDB.map((c,i)=>{
+    const v = voteCount[c.id]||0;
+    const pct = totalVotes ? Math.round(v/totalVotes*100) : 0;
+    const isW = v===maxV&&maxV>0;
+    return `<tr style="${isW?'background:#EAF3DE;font-weight:600':''}">
+      <td>${i+1}</td><td>${c.name}</td><td>${c.dept}</td>
+      <td>${v}표</td><td>${pct}%</td>
+      <td>${isW?'◎ 당선':'—'}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('print-area').innerHTML = `
+  <div class="print-doc">
+    <div class="print-header">
+      <p style="font-size:12px;margin-bottom:6px">${electionTitle}</p>
+      <h2>노사협의회 근로자위원 당선자 공고</h2>
+      <p>${dateStr}</p>
+    </div>
+    <div class="print-body">
+      <p>근로자참여 및 협력증진에 관한 법률 제6조에 따라 실시된 노사협의회 근로자위원 선출 선거 결과를 다음과 같이 공고합니다.</p>
+    </div>
+    ${winner ? `
+    <div class="print-winner-box">
+      <div style="font-size:12px;color:#5f5e5a;margin-bottom:10px">당선자</div>
+      <div class="pw-name">${winner.name}</div>
+      <div class="pw-dept">${winner.dept}</div>
+    </div>` : `<div class="print-winner-box"><div class="pw-name" style="font-size:18px;color:#A32D2D">투표 결과 없음</div></div>`}
+    <table class="print-table">
+      <thead><tr><th>순번</th><th>성명</th><th>직종·경력</th><th>득표수</th><th>득표율</th><th>당선 여부</th></tr></thead>
+      <tbody>${resultRows}</tbody>
+    </table>
+    <div class="print-body">
+      <p>▪ 선거 일시: ${fmtDt(electionPeriod.start)} ~ ${fmtDt(electionPeriod.end)}</p>
+      <p>▪ 선거인 수: ${total}명 &nbsp;|&nbsp; 투표 수: ${voted}명 &nbsp;|&nbsp; 투표율: ${total>0?Math.round(voted/total*100):0}%</p>
+      <p>▪ 과반수 기준: ${quorum}명 이상 &nbsp;|&nbsp; 유효 선거 여부: ${voted>=quorum?'충족 ✓':'미달 ✗'}</p>
+    </div>
+    <div class="print-footer">
+      ${dateStr} &nbsp;&nbsp; ${electionTitle} 선거관리위원회
+      <span class="print-seal">직인</span>
+    </div>
+  </div>`;
+
+  window.print();
+}
+
+
+/* ── 관리자 비밀번호 보호 ── */
+let ADMIN_PW = 'admin1234';   // 실 배포 시 Script Properties로 대체
+const MAX_ATTEMPTS = 5;
+const SESSION_MINUTES = 10;
+let pwAttempts = 0;
+let adminAuthed = false;
+let sessionTimer = null;
+let sessionRemain = 0;
+
+function openAdminModal(){
+  if(adminAuthed){ goAdmin(); return; }
+  pwAttempts=0;
+  document.getElementById('pw-input').value='';
+  document.getElementById('pw-err').style.display='none';
+  document.getElementById('pw-attempts').textContent='';
+  goScreen('s-pw');
+  setTimeout(()=>document.getElementById('pw-input').focus(),80);
+}
+
+function closeAdminModal(){
+  document.getElementById('pw-input').value='';
+  document.getElementById('pw-err').style.display='none';
+  goScreen('s-login');
+}
+
+function togglePw(){
+  const inp=document.getElementById('pw-input');
+  inp.type = inp.type==='password' ? 'text' : 'password';
+  document.getElementById('pw-toggle-btn').innerHTML = inp.type==='password' ? '&#128065;' : '&#128584;';
+}
+
+function doAdminLogin(){
+  const pw = document.getElementById('pw-input').value;
+  const errEl = document.getElementById('pw-err');
+  const attEl = document.getElementById('pw-attempts');
+
+  if(pwAttempts >= MAX_ATTEMPTS){
+    errEl.textContent = `비밀번호 ${MAX_ATTEMPTS}회 오류로 잠겼습니다. 페이지를 새로고침하세요.`;
+    errEl.style.display='block';
+    return;
+  }
+
+  if(pw === ADMIN_PW){
+    pwAttempts = 0;
+    adminAuthed = true;
+    closeAdminModal();
+    startSessionTimer();
+    addLog('관리자 로그인 성공', null);
+    goAdmin();
+  } else {
+    pwAttempts++;
+    const remain = MAX_ATTEMPTS - pwAttempts;
+    errEl.textContent = `비밀번호가 올바르지 않습니다.`;
+    errEl.style.display='block';
+    attEl.textContent = `남은 시도: ${remain}회`;
+    attEl.className = 'pw-attempts' + (remain<=2?' warn':'');
+    document.getElementById('pw-input').value='';
+    document.getElementById('pw-input').focus();
+    if(pwAttempts >= MAX_ATTEMPTS){
+      errEl.textContent = `비밀번호 ${MAX_ATTEMPTS}회 오류. 잠금 처리되었습니다.`;
+      addLog('관리자 로그인 잠금 — 5회 오류', null);
+    }
+  }
+}
+
+function startSessionTimer(){
+  clearInterval(sessionTimer);
+  sessionRemain = SESSION_MINUTES * 60;
+  updateTimerDisplay();
+  sessionTimer = setInterval(()=>{
+    sessionRemain--;
+    updateTimerDisplay();
+    if(sessionRemain <= 0){ logoutAdmin(); }
+  }, 1000);
+}
+
+function updateTimerDisplay(){
+  const m = Math.floor(sessionRemain/60);
+  const s = sessionRemain % 60;
+  const txt = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  const el = document.getElementById('session-timer');
+  if(el) el.textContent = txt;
+  if(el && sessionRemain <= 60) el.style.color='#A32D2D';
+  else if(el) el.style.color='#3B6D11';
+}
+
+function logoutAdmin(){
+  clearInterval(sessionTimer);
+  adminAuthed = false;
+  pwAttempts = 0;
+  addLog('관리자 로그아웃', null);
+  goScreen('s-login');
+}
+
+/* ── 비밀번호 변경 ── */
+function toggleField(id){
+  const el=document.getElementById(id);
+  el.type=el.type==='password'?'text':'password';
+}
+
+function checkPwStrength(){
+  const pw=document.getElementById('pw-new1').value;
+  const bar=document.getElementById('pw-strength-bar');
+  const fill=document.getElementById('pw-strength-fill');
+  const txt=document.getElementById('pw-strength-text');
+  if(!pw){bar.style.display='none';return;}
+  bar.style.display='block';
+  let score=0;
+  if(pw.length>=8) score++;
+  if(pw.length>=12) score++;
+  if(/[A-Za-z]/.test(pw)&&/[0-9]/.test(pw)) score++;
+  if(/[^A-Za-z0-9]/.test(pw)) score++;
+  const levels=[
+    {w:'25%', bg:'#E24B4A', label:'매우 약함'},
+    {w:'50%', bg:'#BA7517', label:'약함'},
+    {w:'75%', bg:'#639922', label:'보통'},
+    {w:'100%',bg:'#3B6D11', label:'강함'},
+  ];
+  const lv=levels[Math.min(score,3)];
+  fill.style.width=lv.w; fill.style.background=lv.bg;
+  txt.textContent='강도: '+lv.label; txt.style.color=lv.bg;
+}
+
+function doChangePw(){
+  const cur=document.getElementById('pw-cur').value;
+  const n1=document.getElementById('pw-new1').value;
+  const n2=document.getElementById('pw-new2').value;
+  const errEl=document.getElementById('pw-change-err');
+  const okEl=document.getElementById('pw-change-ok');
+  errEl.style.display='none'; okEl.style.display='none';
+
+  if(!cur||!n1||!n2){errEl.textContent='모든 항목을 입력해주세요.';errEl.style.display='block';return;}
+  if(cur!==ADMIN_PW){errEl.textContent='현재 비밀번호가 올바르지 않습니다.';errEl.style.display='block';addLog('비밀번호 변경 실패 — 현재 비밀번호 불일치',null);return;}
+  if(n1.length<8){errEl.textContent='새 비밀번호는 8자 이상이어야 합니다.';errEl.style.display='block';return;}
+  if(n1!==n2){errEl.textContent='새 비밀번호와 확인 비밀번호가 일치하지 않습니다.';errEl.style.display='block';return;}
+  if(n1===cur){errEl.textContent='새 비밀번호는 현재 비밀번호와 달라야 합니다.';errEl.style.display='block';return;}
+
+  ADMIN_PW=n1;
+  document.getElementById('pw-cur').value='';
+  document.getElementById('pw-new1').value='';
+  document.getElementById('pw-new2').value='';
+  document.getElementById('pw-strength-bar').style.display='none';
+  okEl.style.display='block';
+  addLog('관리자 비밀번호 변경 완료',null);
+  // GAS 배포 시: PropertiesService.getScriptProperties().setProperty('ADMIN_PW', n1);
+}
+
+
+</script>
+</body>
+</html>
