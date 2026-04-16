@@ -685,5 +685,33 @@ function doChangePw(){
   okEl.style.display='block';addLog('관리자 비밀번호 변경 완료',null);
 }
 </script>
+  // 마우스 우클릭 방지
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+}, false);
+  // 개발자 도구(F12), 소스보기(Ctrl+U) 등 단축키 차단
+document.addEventListener('keydown', function(e) {
+  // F12 키 막기
+  if (e.keyCode === 123) {
+    e.preventDefault();
+  }
+  // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U 막기
+  if ((e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || (e.ctrlKey && e.keyCode === 85)) {
+    e.preventDefault();
+  }
+}, false);
+  // 마우스 우클릭 방지 및 보안 안내창 표시
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault(); // 기본 메뉴 차단
+  alert("본 시스템은 한솔어린이보육재단 노사협의회 선거의 보안 및 익명성 유지를 위해 마우스 오른쪽 버튼 사용을 제한하고 있습니다.");
+}, false);
+
+// (참고) 키보드 복사 단축키 차단 시에도 안내를 넣고 싶다면
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85)) { // Ctrl+C, Ctrl+U
+    e.preventDefault();
+    alert("보안 정책상 복사 및 소스 보기 단축키를 사용할 수 없습니다.");
+  }
+}, false);
 </body>
 </html>
