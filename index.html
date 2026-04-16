@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>한솔어린이보육재단 노사협의회 근로자위원 선출</title>
@@ -21,7 +22,15 @@
   --radius:14px;--radius-sm:9px;
   --shadow:0 2px 12px rgba(79,106,240,.08);--shadow-md:0 4px 24px rgba(79,106,240,.13);
 }
-body{font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body {
+  /* 폰트 적용 우선순위를 프리텐다드로 변경 */
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  /* 가독성을 위한 최적화 설정 */
+  letter-spacing: -0.02em;
+}
 .app{max-width:700px;margin:0 auto;padding:1.5rem 1rem 3rem}
 .screen{display:none}.screen.active{display:block}
 h1{font-size:22px;font-weight:700;color:var(--text);margin-bottom:5px;letter-spacing:-.3px}
