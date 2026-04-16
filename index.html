@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>노사협의회 근로자위원 선출</title>
+<title>한솔어린이보육재단 노사협의회 근로자위원 선출</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -274,7 +274,7 @@ tr:hover td{background:#FAFBFF}
 <!-- ══ 로그인 ══ -->
 <div id="s-login" class="screen active">
   <div class="badge">근로자참여 및 협력증진에 관한 법률 제6조</div>
-  <h1 id="main-title">노사협의회 근로자위원 선출</h1>
+  <h1 id="main-title">한솔어린이보육재단 노사협의회 근로자위원 선출</h1>
   <p class="sub">사전 등록된 부서·이름·연락처가 모두 일치해야 로그인됩니다.</p>
 
   <!-- 실시간 투표율 배너 -->
@@ -313,8 +313,7 @@ tr:hover td{background:#FAFBFF}
       <label>부서</label>
       <select id="l-dept">
         <option value="">부서를 선택하세요</option>
-        <option>원장</option><option>교사</option><option>조리사</option>
-        <option>영양사</option><option>간호사</option><option>사무직</option><option>기타</option>
+            <option>한솔영유아교육연구소</option><option>어린이집운영본부</option><option>경영지원실</option>
       </select>
       <label>이름</label>
       <input type="text" id="l-name" placeholder="홍길동">
@@ -379,7 +378,7 @@ tr:hover td{background:#FAFBFF}
   <p class="sub">아래 내용을 확인한 후 투표를 완료하세요.</p>
   <div class="cfbox">
     <div class="cfrow"><span class="cflbl">선택 후보</span><span class="cfval" id="cf-name"></span></div>
-    <div class="cfrow"><span class="cflbl">소속·직종</span><span class="cfval" id="cf-dept"></span></div>
+    <div class="cfrow"><span class="cflbl">소속·직급</span><span class="cfval" id="cf-dept"></span></div>
     <div class="cfrow"><span class="cflbl">무기명 처리</span><span class="cfval">제출 즉시 개인정보 분리, 추적 불가</span></div>
   </div>
   <button class="btn green" onclick="doSubmit()">최종 투표 제출</button>
@@ -442,7 +441,7 @@ tr:hover td{background:#FAFBFF}
     <div class="ok-box">선거 기간 외에는 투표 화면이 자동으로 잠깁니다. 기간 변경은 즉시 반영됩니다.</div>
     <div class="card">
       <div class="clabel">선거 제목</div>
-      <input type="text" id="p-title" placeholder="예: 제1기 노사협의회 근로자위원 선출">
+      <input type="text" id="p-title" placeholder="예: 2026년 노사협의회 근로자위원 선출">
       <button class="btn blue sm" style="margin-top:10px;width:auto;padding:8px 20px" onclick="saveTitle()">제목 저장</button>
     </div>
     <div class="card">
@@ -473,7 +472,7 @@ tr:hover td{background:#FAFBFF}
     <div class="emp-form" style="border-color:#185FA5">
       <div class="clabel" style="color:#185FA5">일괄 붙여넣기 등록</div>
       <p style="font-size:12px;color:#5f5e5a;margin-bottom:8px;line-height:1.7">엑셀에서 <strong>부서 · 이름 · 연락처</strong> 3열을 복사해 아래에 붙여넣기 하세요.<br>탭(Tab) 또는 쉼표(,)로 구분된 형식을 자동 인식합니다.</p>
-      <textarea class="paste-area" id="paste-input" placeholder="예시 (엑셀에서 복사 후 붙여넣기):&#10;교사&#9;김민준&#9;010-1234-5678&#10;조리사&#9;이수연&#9;010-2345-6789&#10;사무직&#9;박정호&#9;010-3456-7890" oninput="parsePaste()"></textarea>
+      <textarea class="paste-area" id="paste-input" placeholder="예시 (엑셀에서 복사 후 붙여넣기):&#10;한솔영유아교육연구소&#9;김OO&#9;010-1234-5678&#10;어린이집운영본부&#9;이OO&#9;010-2345-6789&#10;경영지원&#9;박OO&#9;010-3456-7890" oninput="parsePaste()"></textarea>
       <div class="paste-preview" id="paste-preview"></div>
       <div style="display:flex;gap:8px;margin-top:10px">
         <button class="btn blue sm" style="flex:1;padding:10px" id="paste-save-btn" onclick="savePaste()" disabled>일괄 저장</button>
@@ -489,8 +488,7 @@ tr:hover td{background:#FAFBFF}
           <label>부서</label>
           <select id="e-dept">
             <option value="">선택</option>
-            <option>원장</option><option>교사</option><option>조리사</option>
-            <option>영양사</option><option>간호사</option><option>사무직</option><option>기타</option>
+            <option>한솔영유아교육연구소</option><option>어린이집운영본부</option><option>경영지원실</option>
           </select>
         </div>
         <div>
@@ -525,12 +523,12 @@ tr:hover td{background:#FAFBFF}
           <input type="text" id="cn-name" placeholder="홍길동">
         </div>
         <div>
-          <label>직종·경력 (예: 교사 5년)</label>
-          <input type="text" id="cn-dept" placeholder="교사 5년">
+          <label>직급·경력 (예: 매니저 5년)</label>
+          <input type="text" id="cn-dept" placeholder="매니 5년">
         </div>
       </div>
       <label>공약</label>
-      <textarea id="cn-pledge" placeholder="공약을 입력하세요"></textarea>
+      <textarea id="cn-pledge" placeholder="그대로 입력하세요~노사관계의 발전을 위해 힘쓰겠습니다"></textarea>
       <div id="cn-err" class="err"></div>
       <div style="display:flex;gap:8px;margin-top:10px">
         <button class="btn blue sm" style="flex:1;padding:10px" onclick="saveCand()">저장</button>
@@ -610,7 +608,7 @@ tr:hover td{background:#FAFBFF}
       <button class="btn blue" onclick="doChangePw()">비밀번호 변경</button>
     </div>
     <div class="info" style="margin-top:0">
-      권장 비밀번호: 영문+숫자+특수문자 조합 8자 이상. GAS 실배포 시에는 Script Properties에 저장하여 소스코드에 노출되지 않도록 관리하세요.
+      권장 비밀번호: 영문+숫자+특수문자 조합 8자 이상
     </div>
   </div>
 
@@ -663,7 +661,7 @@ let electionPeriod={
   start:new Date(Date.now()).toISOString().slice(0,16),
   end:new Date(Date.now()+1000*60*60*24).toISOString().slice(0,16)
 };
-let electionTitle='노사협의회 근로자위원 선출';
+let electionTitle='한솔어린이보육재단 노사협의회 근로자위원 선출';
 let curEmpId=null,selCandId=null,editEmpId=null,editCandId=null,empIdSeq=1,candIdSeq=1;
 
 /* ── 관리자 비밀번호 — loadDB() 전에 반드시 선언 ── */
@@ -914,7 +912,7 @@ function resetAllData(){
 
 /* ── 붙여넣기 일괄 등록 ── */
 let pasteRows = [];
-const VALID_DEPTS = ['원장','교사','조리사','영양사','간호사','사무직','기타'];
+const VALID_DEPTS = ['한솔영유아교육연구소','어린이집운영본부','경영지원실'];
 
 function parsePaste(){
   const raw = document.getElementById('paste-input').value;
@@ -1001,7 +999,7 @@ function printAnnouncement(){
   <div class="print-doc">
     <div class="print-header">
       <p style="font-size:12px;margin-bottom:6px">${electionTitle}</p>
-      <h2>노사협의회 근로자위원 당선자 공고</h2>
+      <h2>한솔어린이보육재단 노사협의회 근로자위원 당선자 공고</h2>
       <p>${dateStr}</p>
     </div>
     <div class="print-body">
@@ -1014,7 +1012,7 @@ function printAnnouncement(){
       <div class="pw-dept">${winner.dept}</div>
     </div>` : `<div class="print-winner-box"><div class="pw-name" style="font-size:18px;color:#A32D2D">투표 결과 없음</div></div>`}
     <table class="print-table">
-      <thead><tr><th>순번</th><th>성명</th><th>직종·경력</th><th>득표수</th><th>득표율</th><th>당선 여부</th></tr></thead>
+      <thead><tr><th>순번</th><th>성명</th><th>직급·경력</th><th>득표수</th><th>득표율</th><th>당선 여부</th></tr></thead>
       <tbody>${resultRows}</tbody>
     </table>
     <div class="print-body">
