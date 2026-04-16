@@ -666,7 +666,16 @@ let electionPeriod={
 let electionTitle='노사협의회 근로자위원 선출';
 let curEmpId=null,selCandId=null,editEmpId=null,editCandId=null,empIdSeq=1,candIdSeq=1;
 
-loadDB(); // localStorage에서 데이터 복원
+/* ── 관리자 비밀번호 — loadDB() 전에 반드시 선언 ── */
+let ADMIN_PW = 'admin1234';
+const MAX_ATTEMPTS = 5;
+const SESSION_MINUTES = 10;
+let pwAttempts = 0;
+let adminAuthed = false;
+let sessionTimer = null;
+let sessionRemain = 0;
+
+loadDB(); // localStorage에서 데이터 복원 (ADMIN_PW 포함)
 
 function normalizePhone(p){return p.replace(/\D/g,'');}
 function maskPhone(p){const d=normalizePhone(p);if(d.length<8)return '***-****-****';return d.slice(0,3)+'-****-'+d.slice(7);}
@@ -784,10 +793,9 @@ function renderResult(){
   document.getElementById('r-bars').innerHTML=candDB.map((c,i)=>{
     const v=voteCount[c.id]||0;const pct=total?Math.round(v/total*100):0;
     return `<div class="rbar"><div class="rhead"><span>${c.name} <span style="color:#888780;font-weight:400">(${c.dept})</span></span><span>${v}표 · ${pct}%</span></div><div class="rbg"><div class="rfill" style="width:${pct}%;background:${CBAR_COLORS[i%CBAR_COLORS.length]}"></div></div></div>`;
-  }).join(''); 
-  
-  const quorum=Math.floor(TOTAL/2)+1;
-  const st=document.getElementById('r-status');
+  }).join('');
+  }).join('');
+  const quorum=Math.floor(TOTAL/2)+1;const st=document.getElementById('r-status');
   if(total>=quorum){st.style.borderLeftColor='#3B6D11';st.innerHTML=`투표율 과반수 충족 (${total}/${TOTAL}명). 투표가 유효하게 진행되고 있습니다.`;}
   else{st.style.borderLeftColor='#BA7517';st.innerHTML=`과반수 미달 — ${total}명 참여 / 유효 선거 기준: ${quorum}명 이상 필요`;}
 }
@@ -1024,14 +1032,7 @@ function printAnnouncement(){
 }
 
 
-/* ── 관리자 비밀번호 보호 ── */
-let ADMIN_PW = 'admin1234';   // 실 배포 시 Script Properties로 대체
-const MAX_ATTEMPTS = 5;
-const SESSION_MINUTES = 10;
-let pwAttempts = 0;
-let adminAuthed = false;
-let sessionTimer = null;
-let sessionRemain = 0;
+/* ── 관리자 인증 함수 ── */
 
 function openAdminModal(){
   if(adminAuthed){ goAdmin(); return; }
