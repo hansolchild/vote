@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>한솔어린이보육재단 노사협의회 근로자위원 선출</title>
 <style>
-  body {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#F0F2F8;--surface:#fff;--surface2:#F7F8FC;--border:#E4E7F0;--border2:#CDD2E8;
@@ -22,15 +15,7 @@
   --radius:14px;--radius-sm:9px;
   --shadow:0 2px 12px rgba(79,106,240,.08);--shadow-md:0 4px 24px rgba(79,106,240,.13);
 }
-body {
-  /* 폰트 적용 우선순위를 프리텐다드로 변경 */
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  /* 가독성을 위한 최적화 설정 */
-  letter-spacing: -0.02em;
-}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 .app{max-width:700px;margin:0 auto;padding:1.5rem 1rem 3rem}
 .screen{display:none}.screen.active{display:block}
 h1{font-size:22px;font-weight:700;color:var(--text);margin-bottom:5px;letter-spacing:-.3px}
@@ -139,7 +124,6 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#FAFBFF}
 </style>
 </head>
 <body>
-  <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 <div class="app">
 
 <!-- 관리자 비밀번호 화면 -->
@@ -158,6 +142,7 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#FAFBFF}
     <div id="pw-err" class="err"></div>
     <button class="btn blue" onclick="doAdminLogin()" style="margin-top:14px;padding:13px;font-size:15px">확인</button>
     <button class="btn" onclick="goScreen('s-login')" style="margin-top:8px">← 돌아가기</button>
+    <p style="font-size:11px;color:#b4b2a9;text-align:center;margin-top:14px">초기 비밀번호: <strong>admin1234</strong></p>
   </div>
 </div>
 
@@ -417,6 +402,16 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#FAFBFF}
 <script>
 const CBAR=['#4F6AF0','#22A06B','#F59E0B','#E5484D','#7C3AED','#0EA5E9'];
 
+/* ── 전역 변수 선언 — 반드시 saveDB/loadDB보다 먼저 ── */
+let empDB=[],candDB=[],voteCount={};
+const votedSet=new Set(),voteTimestamps={},sysLog=[];
+let electionPeriod={start:new Date().toISOString().slice(0,16),end:new Date(Date.now()+864e5).toISOString().slice(0,16)};
+let electionTitle='한솔어린이보육재단 노사협의회 근로자위원 선출';
+let curEmpId=null,selCandId=null,editEmpId=null,editCandId=null,empIdSeq=1,candIdSeq=1;
+let ADMIN_PW='admin1234';
+const MAX_ATTEMPTS=5,SESSION_MINUTES=10;
+let pwAttempts=0,adminAuthed=false,sessionTimer=null,sessionRemain=0;
+
 function saveDB(){
   localStorage.setItem('election_empDB',JSON.stringify(empDB));
   localStorage.setItem('election_candDB',JSON.stringify(candDB));
@@ -443,17 +438,6 @@ function loadDB(){
     const pw=localStorage.getItem('election_adminpw');if(pw)ADMIN_PW=pw;
   }catch(err){console.error('DB 로드 오류',err);}
 }
-
-let empDB=[],candDB=[],voteCount={};
-const votedSet=new Set(),voteTimestamps={},sysLog=[];
-let electionPeriod={start:new Date().toISOString().slice(0,16),end:new Date(Date.now()+864e5).toISOString().slice(0,16)};
-let electionTitle='한솔어린이보육재단 노사협의회 근로자위원 선출';
-let curEmpId=null,selCandId=null,editEmpId=null,editCandId=null,empIdSeq=1,candIdSeq=1;
-
-/* ★ ADMIN_PW는 반드시 loadDB() 호출 전에 선언 ★ */
-let ADMIN_PW='admin1234';
-const MAX_ATTEMPTS=5,SESSION_MINUTES=10;
-let pwAttempts=0,adminAuthed=false,sessionTimer=null,sessionRemain=0;
 
 loadDB();
 
@@ -700,23 +684,6 @@ function doChangePw(){
   P('pw-cur').value='';P('pw-new1').value='';P('pw-new2').value='';P('pw-strength-bar').style.display='none';
   okEl.style.display='block';addLog('관리자 비밀번호 변경 완료',null);
 }
-</script>
-<script>
-// 1. 우클릭 방지 및 경고창
-document.oncontextmenu = function() {
-    alert("보안을 위해 우클릭을 제한합니다.");
-    return false;
-};
-
-// 2. 키보드 단축키 차단 (F12, Ctrl+U, Ctrl+Shift+I 등)
-document.onkeydown = function(e) {
-    if (e.keyCode == 123) return false; // F12
-    if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; // Ctrl+Shift+I/J
-    if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U (소스보기)
-};
-
-// 3. 드래그 및 선택 방지
-document.onselectstart = function() { return false; };
 </script>
 </body>
 </html>
