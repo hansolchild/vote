@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <script>
+  document.addEventListener('keydown', function(event) {
+    // F12 방지
+    if (event.keyCode === 123) {
+      event.preventDefault();
+    }
+    // Ctrl+Shift+I (개발자 도구) 방지
+    if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+      event.preventDefault();
+    }
+    // Ctrl+Shift+J (콘솔) 방지
+    if (event.ctrlKey && event.shiftKey && event.keyCode === 74) {
+      event.preventDefault();
+    }
+    // Ctrl+U (소스 보기) 방지
+    if (event.ctrlKey && event.keyCode === 85) {
+      event.preventDefault();
+    }
+  });
+
+  // 우클릭 방지 통합
+  document.addEventListener('contextmenu', e => e.preventDefault());
+</script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 탭에 표시될 타이틀 -->
@@ -25,27 +49,5 @@
     <!-- 전달해주신 GAS 주소 삽입 -->
     <iframe src="https://script.google.com/macros/s/AKfycbxKXhj3AdqBjrPOkNG9GsRqr99W6rGto3lLGvay3Epe7EvOTcHoTZSFIIAwUn_1WQtY/exec"></iframe>
 </body>
-    <script>
-  document.addEventListener('keydown', function(event) {
-    // F12 방지
-    if (event.keyCode === 123) {
-      event.preventDefault();
-    }
-    // Ctrl+Shift+I (개발자 도구) 방지
-    if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
-      event.preventDefault();
-    }
-    // Ctrl+Shift+J (콘솔) 방지
-    if (event.ctrlKey && event.shiftKey && event.keyCode === 74) {
-      event.preventDefault();
-    }
-    // Ctrl+U (소스 보기) 방지
-    if (event.ctrlKey && event.keyCode === 85) {
-      event.preventDefault();
-    }
-  });
 
-  // 우클릭 방지 통합
-  document.addEventListener('contextmenu', e => e.preventDefault());
-</script>
 </html>
